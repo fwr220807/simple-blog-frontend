@@ -1,9 +1,216 @@
-/* 版心 */
-.w {
-	width: 800px;
-	margin: 0 auto;
+@import url(./markdown/github-markdown.css);
+/* 明亮模式,即默认为 :root 属性 */
+.light {
 }
 
-.custom {
-	font-family: 'Helvetica Neue', Arial, 'Hiragino Sans GB', 'STHeiti', 'Microsoft YaHei', 'WenQuanYi Micro Hei', SimSun, sans-serif;
+/* 深色模式 */
+html.dark {
+	/* 第一层级：定义需要的色卡 */
+	--white: #c9d1d9;
+	--light-white: #e7ecf06c;
+	--black: #252525;
+	--light-black: #333535;
+	--light-transparent-black: rgba(53, 53, 53, 0.7);
+	--blue: #177cb0;
+	--light-blue: #5da3c8;
+	--light-transparent-blue: rgba(93, 162, 200, 0.25);
+	--gray: #7d7d80;
+	--light-gray: #666669;
+	--yellow: #bf9105;
+	--red: #b62936;
+
+	/* 第二层级：为色卡赋予意义，当不太需要拓展层级时，可在组件中使用 */
+	/* 此为背景颜色 */
+	--background: var(--black);
+	--light-background: var(--light-black);
+	--light-transparent-background: var(--light-transparent-black);
+	/* 此为字体颜色 */
+	--font: var(--white);
+	--deep-font: var(--white);
+	--light-font: var(--light-white);
+	/* 此为主题颜色 */
+	--theme: var(--blue);
+	--light-theme: var(--light-blue);
+	--light-transparent-theme: var(--light-transparent-blue);
+	/* 此颜色意义为边框颜色 */
+	--border: var(--gray);
+	--light-border: var(--light-gray);
+	/* 此为可交互颜色 */
+	--interaction: var(--yellow);
+	/* 此为警示颜色 */
+	--warn: var(--red);
+}
+html.dark body:before {
+	opacity: 0;
+}
+
+:root {
+	/* 第一层级：定义需要的色卡 */
+	--white: #fafafa;
+	--light-white: #fff;
+	--light-transparent-white: rgba(255, 255, 255, 0.72);
+	--black: #24292f;
+	--deep-black: #24292f;
+	--light-black: #a7a9ac66;
+	--blue: #177cb0;
+	--light-blue: #5da3c8;
+	--light-transparent-blue: rgba(93, 162, 200, 0.25);
+	--gray: #d1d1d6;
+	--light-gray: #eee;
+	--yellow: #ffc107;
+	--red: #f23648;
+
+	/* 第二层级：为色卡赋予意义，当不太需要拓展层级时，可在组件中使用 */
+	/* 此为背景颜色 */
+	--background: var(--white);
+	--light-background: var(--light-white);
+	--light-transparent-background: var(--light-transparent-white);
+	/* 此为字体颜色 */
+	--font: var(--black);
+	--deep-font: var(--deep-black);
+	--light-font: var(--light-black);
+	/* 此为主题颜色 */
+	--theme: var(--blue);
+	--light-theme: var(--light-blue);
+	--light-transparent-theme: var(--light-transparent-blue);
+	/* 此颜色意义为边框颜色 */
+	--border: var(--gray);
+	--light-border: var(--light-gray);
+	/* 此为可交互颜色 */
+	--interaction: var(--yellow);
+	/* 此为警示颜色 */
+	--warn: var(--red);
+	/* 第三层级，拓展意义，原理上组件都引用该值，理想状态下可一一对应细分的组件中的颜色，可做到自定义的最大化 */
+	--title: var(--theme);
+	--header: var(--theme);
+	--header-hover: var(--light-theme);
+	--article-title: var(--deep-font);
+	--input-hover: var(--interaction);
+	--input-focus: var(--interaction);
+	--scrollbar: var(--interaction);
+	--pagination-font: var(--font);
+	--pagination-hover: var(--theme);
+	--backtop-font: var(--theme);
+	--comment-sum-left-border: var(--theme);
+	--header-tree-left-border: var(--interaction);
+	--error-color: var(--warn);
+}
+
+body {
+	transition: color 0.2s, background 0.2s, border 0.2s, box-shadow 0.5s;
+	background-color: var(--background);
+	color: var(--font);
+}
+
+body:before {
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	opacity: 1;
+	z-index: -1;
+	content: '';
+	position: fixed;
+	/* 定义 width 属性，防止滚动条的出现挤压 body 宽度导致出现背景错动 */
+	width: 100vw;
+	background: url(../assets/images/background.png) center;
+}
+
+p {
+	line-height: 1.8;
+	/* -webkit-font-smoothing: subpixel-antialiased; */
+}
+
+a {
+	color: var(--font);
+	user-select: none;
+}
+
+h2 {
+	font-size: 24px;
+	font-weight: normal;
+}
+
+/* input 标签自动填充的样式清除 */
+input:-internal-autofill-selected {
+	-webkit-text-fill-color: var(--font) !important;
+	/* caret-color: var(--font) !important; */
+	background-color: var(--background) !important;
+	background-image: none !important;
+	color: var(--font) !important;
+	box-shadow: inset 0 0 0 1000px var(--background) !important;
+}
+input:-internal-autofill-previewed {
+	-webkit-text-fill-color: var(--font) !important;
+}
+input:-webkit-autofill {
+	box-shadow: 0 0 0px 1000px var(--background) inset !important;
+}
+input:-webkit-autofill:focus {
+	box-shadow: 0 0 0px 1000px var(--background) inset !important;
+}
+
+/* 修改浏览器滚动条样式 */
+::-webkit-scrollbar {
+	width: 8px;
+	height: 100%;
+	background: var(--light-background);
+	border-left: 1px solid var(--light-border);
+}
+::-webkit-scrollbar-thumb {
+	background-color: var(--scrollbar);
+	border-radius: 8px;
+}
+/* ::-webkit-scrollbar-thumb:hover {
+	background-color: rgba(89, 164, 169, 0.8);
+} */
+
+.disable-user-select {
+	user-select: none;
+}
+
+.btn {
+	padding: 0.5em 1em;
+	margin-top: 7px;
+	border: 1px solid transparent;
+	font-size: 16px;
+	color: var(--white);
+	border-radius: 1em;
+}
+
+.red {
+	background-color: var(--red);
+}
+
+.yellow {
+	background-color: var(--yellow);
+}
+/* 给代码块添加 mac 窗口样式，就是左上角的三个点 */
+.pre-mac {
+	position: absolute;
+	margin-top: -7px;
+	top: 16px;
+	left: 14px;
+	width: 100px;
+	z-index: 99;
+}
+.pre-mac > span {
+	float: left;
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+	margin-right: 5px;
+}
+.pre-mac > span:nth-child(1) {
+	background: red;
+}
+.pre-mac > span:nth-child(2) {
+	background: sandybrown;
+}
+.pre-mac > span:nth-child(3) {
+	background: limegreen;
+}
+/* 预留够高度给mac窗口样式 */
+.padding-top-mac {
+	padding-top: 2em !important;
 }

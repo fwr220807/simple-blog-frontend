@@ -1,10 +1,36 @@
+@font-face {
+	font-family: HarmonyOS_R;
+	font-style: normal;
+	src: url(/src/assets/fonts/HarmonyOS_Sans_Regular.ttf) format('truetype');
+}
+
+@font-face {
+	font-family: HarmonyOS_L;
+	font-style: normal;
+	src: url(/src/assets/fonts/HarmonyOS_Sans_Light.ttf) format('truetype');
+}
+
 /* 把我们所有标签的内外边距清零 */
 * {
 	margin: 0;
 	padding: 0;
 	/* css3盒子模型 */
 	box-sizing: border-box;
+	/* 使得在移动端点击 a 标签不会出现高亮框 */
+	-webkit-tap-highlight-color: transparent;
 }
+
+/* 解决滚动条的消失出现，挤压 body 宽度导致的的内容左右错动问题 */
+/* html {
+	overflow-y: auto;
+	overflow-x: hidden;
+} */
+/* 右边腾出滚动条的宽度 */
+/* #app {
+	margin-right: calc(100% - 100vw);
+	padding-right: 8px;
+} */
+
 /* em 和 i 斜体的文字不倾斜 */
 em,
 i {
@@ -12,7 +38,7 @@ i {
 }
 /* 去掉li 的小圆点 */
 li {
-	list-style: none;
+	/* list-style: none; */
 }
 
 img {
@@ -32,25 +58,39 @@ a {
 	cursor: pointer;
 }
 
-a:hover {
-	color: rgba(255, 255, 255, 0.8);
+button {
+	user-select: none;
 }
 
 button,
-input {
+input,
+textarea {
 	/* "\5B8B\4F53" 就是宋体的意思 这样浏览器兼容性比较好 */
-	font-family: 'Lato', 'Open Sans', 'PingFang SC', Microsoft YaHei, Heiti SC, tahoma, arial, Hiragino Sans GB, '\5B8B\4F53', sans-serif;
-	/* 默认有灰色边框我们需要手动去掉 */
+	font-family: HarmonyOS_R, HarmonyOS_L, -apple-system, 'Microsoft Yahei', 'PingFang SC', 'Hiragino Sans GB', sans-serif;
 	border: 0;
 	outline: none;
+	color: var(--font);
 }
 
 body {
+	font: 16px/1.5 HarmonyOS_R, HarmonyOS_L, -apple-system, 'Microsoft Yahei', 'PingFang SC', 'Hiragino Sans GB', sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
 	/* CSS3 抗锯齿形 让文字显示的更加清晰 */
 	-webkit-font-smoothing: antialiased;
-	background-color: #fff;
-	font: 12px/1.5 'Lato', 'Open Sans', 'PingFang SC', Microsoft YaHei, Heiti SC, tahoma, arial, Hiragino Sans GB, '\5B8B\4F53', sans-serif;
-	color: #666;
+	font-weight: normal;
+}
+
+p,
+span {
+	-webkit-font-smoothing: antialiased;
+	font-weight: normal;
 }
 
 .hide,
