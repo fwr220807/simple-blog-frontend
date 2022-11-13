@@ -27,7 +27,7 @@ Vite + Vue3 + vue-router + pinia + element-plus + axios + vee-validate + marked 
 3. 文章页的内容使用 markdown 语法展示；
 4. 文章内容标题跳转功能；
 5. 文章评论功能；
-6. 自动适配黑暗主题，并提供切换主题按钮；
+6. 适配黑暗主题，并实现自动和手动切换主题；
 7. 适配移动端。
 
 ## 准备
