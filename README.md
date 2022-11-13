@@ -4,7 +4,7 @@
 
 目前暂时只有前台的展示，涉及到登陆管理员，发表、修改、删除文章，添加、修改、删除栏目，审核、删除评论等操作需要自己发送请求（因为后台还没做 😂，挖个坑）。
 
-## 页面展示
+## 展示
 
 ![Snipaste_2022-11-13_12-32-54](https://typora-picgo-1312201263.cos.ap-guangzhou.myqcloud.com/img/202211131237053.jpg)
 
@@ -20,7 +20,7 @@
 
 Vite + Vue3 + vue-router + pinia + element-plus + axios + vee-validate + awesome-font
 
-## 功能特性
+## 特性
 
 1. SPA 单页面网站；
 2. 首页展示文章列表；
@@ -33,7 +33,7 @@ Vite + Vue3 + vue-router + pinia + element-plus + axios + vee-validate + awesome
 ## 准备
 
 1. nodejs 环境，[指路](https://nodejs.org/en/)；
-2. 启动服务器 server，指路；
+2. 启动服务器 server，[指路](https://github.com/fwr220807/simple-blog-server)。
 
 ## 构建
 
@@ -47,4 +47,4 @@ npm run dev
 
 ## 证书
 
-MIT
+[MIT](https://github.com/fwr220807/simple-blog-frontend/blob/main/LICENSE)
