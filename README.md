@@ -1,8 +1,8 @@
 # simple-blog-frontend
 
-使用 Vite + VUE3 构建的简约风格的可用个人博客网站的前端系统，UI 风格参考了 [Innei](https://innei.ren/) 和 [Paul](https://paugram.com/) 网站。由于没有配置 mock，所以正常预览需搭配后端服务器使用。
+使用 Vite + VUE3 构建的简约风格的可用个人博客网站的前端系统，UI 风格参考了 [Innei](https://innei.ren/) 和 [Paul](https://paugram.com/) 网站。由于没有配置 mock，所以正常预览需搭配后端服务器一起使用。
 
-目前暂时只有前台的展示，涉及到登陆管理员，发表、修改、删除文章，添加、修改、删除栏目，审核、删除评论等操作需要自己发送请求（因为后台还没做 😂，挖个坑）。
+目前只有前台的展示，涉及到登陆管理员，发表、修改、删除文章，添加、修改、删除栏目，审核、删除评论等操作需要自己发送请求（或者直接在数据库操作）（后台还没做 😂，挖个坑吧）。
 
 ## 展示
 
@@ -18,7 +18,7 @@
 
 ## 技术栈
 
-Vite + Vue3 + vue-router + pinia + element-plus + axios + vee-validate + awesome-font
+Vite + Vue3 + vue-router + pinia + element-plus + axios + vee-validate + marked + awesome-font
 
 ## 特性
 
@@ -40,8 +40,9 @@ Vite + Vue3 + vue-router + pinia + element-plus + axios + vee-validate + awesome
 ```bash
 // 下载项目到本地
 git clone https://github.com/fwr220807/simple-blog-frontend
-// 进入项目目录，安装依赖，启动项目
+// 进入项目目录后，安装依赖
 npm install
+// 启动项目
 npm run dev
 ```
 
