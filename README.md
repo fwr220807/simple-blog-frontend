@@ -18,7 +18,7 @@
 
 ## 技术栈
 
-Vite + Vue3 + vue-router + pinia + element-plus + axios + vee-validate + marked + awesome-font
+Vite + Vue3 + vue-router + pinia + element-plus + axios + vee-validate + marked
 
 ## 特性
 
