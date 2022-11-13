@@ -1,6 +1,6 @@
 # simple-blog-frontend
 
-使用 Vite + VUE3 构建的简约风格的可用个人博客网站的前端系统，UI 风格参考了 [Innei](https://innei.ren/) 和 [Paul](https://paugram.com/) 网站。由于没有配置 mock，所以正常预览需搭配后端服务器一起使用。
+使用 Vite + VUE3 构建的简约风格的个人博客网站的前端系统，UI 风格参考了 [Innei](https://innei.ren/) 和 [Paul](https://paugram.com/) 网站。由于没有配置 mock，所以正常预览需搭配后端服务器一起使用。
 
 目前只有前台的展示，涉及到登陆管理员，发表、修改、删除文章，添加、修改、删除栏目，审核、删除评论等操作需要自己发送请求（或者直接在数据库操作）（后台还没做 😂，挖个坑吧）。
 
