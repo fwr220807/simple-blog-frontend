@@ -28,6 +28,7 @@ Vite + Vue3 + vue-router + pinia + element-plus + axios + vee-validate + awesome
 4. 文章内容标题跳转功能；
 5. 文章评论功能；
 6. 自动适配黑暗主题，并提供切换主题按钮；
+7. 适配移动端。
 
 ## 准备
 
