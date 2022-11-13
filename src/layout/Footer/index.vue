@@ -1,7 +1,7 @@
 <template>
 	<hr />
 	<div class="footer" :class="{ animation: true }">
-		<p>© 2022 范文润 ❖ Powered by VUE3+VITE.</p>
+		<p>© 2022 fwr220807 ❖ Powered by VUE3+VITE.</p>
 	</div>
 </template>
 
@@ -18,6 +18,7 @@ hr {
 	border: 0;
 	border-top: 1px solid var(--light-border);
 }
+
 .footer {
 	height: 40px;
 	line-height: 140px;

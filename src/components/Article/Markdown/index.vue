@@ -99,16 +99,5 @@ onMounted(() => {
 <style scoped lang="less">
 .markdown-body {
 	background-color: transparent;
-
-	h2 {
-		background-color: pink;
-		position: relative;
-
-		&:before {
-			content: 'h2';
-			display: block;
-			position: absolute;
-		}
-	}
 }
 </style>

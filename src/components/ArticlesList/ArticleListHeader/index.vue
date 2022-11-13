@@ -1,14 +1,24 @@
 <template>
 	<div class="header" v-if="title">
 		<div class="header-main">
-			<h1>{{ isHome() ? '赛博空间' : `“${title}”` }}</h1>
+			<h1>{{ isHome() ? '只是一个博客' : `“${title}”` }}</h1>
 			<hr class="small" v-if="isHome()" />
 			<div class="icons" v-if="isHome()">
-				<a title="新浪微博" href="https://weibo.com/u/1897115823" target="_blank"><font-awesome-icon icon="fa-brands fa-weibo" size="1x" /></a>
-				<a title="企鹅"><font-awesome-icon icon="fa-brands fa-qq" size="1x" /></a>
-				<a title="Github" href="https://github.com/fwr220807" target="_blank"><font-awesome-icon icon="fa-brands fa-github" size="1x" /></a>
-				<a title="Steam"><font-awesome-icon icon="fa-brands fa-steam" size="1x" /></a>
-				<a title="Home"><font-awesome-icon icon="fa-solid fa-house" size="1x" /></a>
+				<a title="新浪微博" href="#" target="_blank">
+					<font-awesome-icon icon="fa-brands fa-weibo" size="1x" />
+				</a>
+				<a title="企鹅">
+					<font-awesome-icon icon="fa-brands fa-qq" size="1x" />
+				</a>
+				<a title="Github" href="https://github.com/fwr220807" target="_blank">
+					<font-awesome-icon icon="fa-brands fa-github" size="1x" />
+				</a>
+				<a title="Steam">
+					<font-awesome-icon icon="fa-brands fa-steam" size="1x" />
+				</a>
+				<a title="Home">
+					<font-awesome-icon icon="fa-solid fa-house" size="1x" />
+				</a>
 			</div>
 			<div class="category" v-else-if="isCategory()">
 				<p>{{ describe }}</p>
