@@ -18,7 +18,7 @@
 
 ## 技术栈
 
-Vite + Vue3 + vue-router + pinia + element-plus + axios + vee-validate + marked
+Vite + Vue3 + JS + vue-router + pinia + element-plus + axios
 
 ## 特性
 
