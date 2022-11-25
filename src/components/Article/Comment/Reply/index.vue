@@ -5,33 +5,34 @@
 				<span class="input">
 					<font-awesome-icon icon="fa-regular fa-circle-user" />
 					<input name="name" type="text" placeholder="昵称 *" v-model="name" />
-					<span v-if="disabled" class="err-message" v-for="message in nameErrors" :key="message">{{ message }}</span>
+					<span v-if="disabled" class="err-message" v-for="message in nameErrors" :key="message">{{ message
+					}}</span>
 				</span>
 				<span class="input">
 					<font-awesome-icon icon="fa-regular fa-envelope" />
 					<input name="email" type="text" placeholder="邮箱 *" v-model="email" />
-					<span v-if="disabled" class="err-message" v-for="message in emailErrors" :key="message">{{ message }}</span>
+					<span v-if="disabled" class="err-message" v-for="message in emailErrors" :key="message">{{ message
+					}}</span>
 				</span>
 				<span class="input">
 					<font-awesome-icon icon="fa-regular fa-map" />
 					<input name="website" type="text" placeholder="网站 https?://" v-model="website" />
-					<span v-if="disabled" class="err-message" v-for="message in websiteErrors" :key="message">{{ message }}</span>
+					<span v-if="disabled" class="err-message" v-for="message in websiteErrors" :key="message">{{ message
+					}}</span>
 				</span>
 			</div>
 			<div class="reply">
-				<textarea
-					name="content"
-					maxlength="500"
-					ref="textarea"
-					rows="4"
-					placeholder="你看看我嘛ヽ\(・∀・\)ﾉ 留个评论好不好～"
-					v-model="content"
-				></textarea>
-				<span v-if="disabled" class="err-message" v-for="message in contentErrors" :key="message">{{ message }}</span>
+				<textarea name="content" maxlength="500" ref="textarea" rows="4" placeholder="你看看我嘛ヽ\(・∀・\)ﾉ 留个评论好不好～"
+					v-model="content"></textarea>
+				<span v-if="disabled" class="err-message" v-for="message in contentErrors" :key="message">{{ message
+				}}</span>
 			</div>
 			<div class="btn">
-				<el-tooltip class="box-item" effect="dark" content="评论可能需要审核，审核通过后才会显示" placement="bottom-start">
-					<span class="info" ref="btn"><font-awesome-icon icon="fa-regular fa-circle-question" /></span>
+				<el-tooltip class="box-item" effect="dark" content="评论可能需要审核，审核通过后才会显示" placement="bottom-start"
+					:manual="true">
+					<span class="info" ref="btn">
+						<font-awesome-icon icon="fa-regular fa-circle-question" />
+					</span>
 				</el-tooltip>
 				<button class="submit-btn" :class="{ shake: disabled }">发送</button>
 			</div>
@@ -292,19 +293,23 @@ const { value: content, errors: contentErrors } = useField('content')
 	}
 
 	@keyframes shake {
+
 		10%,
 		90% {
 			transform: translate3d(-1px, 0, 0);
 		}
+
 		20%,
 		80% {
 			transform: translate3d(2px, 0, 0);
 		}
+
 		30%,
 		50%,
 		70% {
 			transform: translate3d(-4px, 0, 0);
 		}
+
 		40%,
 		60% {
 			transform: translate3d(4px, 0, 0);
@@ -317,6 +322,7 @@ const { value: content, errors: contentErrors } = useField('content')
 		.visitor {
 			flex-direction: column;
 			margin: 12px 0;
+
 			.input {
 				margin: 15px 0;
 

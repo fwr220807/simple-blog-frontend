@@ -49,7 +49,7 @@ export default defineConfig({
 			// languages: allLanguages,
 			plugins: ['line-numbers', 'show-language', 'copy-to-clipboard'],
 			// 引入 one-dark 主题，由于 one-dark 不是官方主题，所以需要先下载 prism-themes ，然后把 one-dark 的 css 文件复制粘贴到 prism 包的 themes 即可
-			theme: 'one-dark',
+			theme: 'tomorrow',
 			css: true,
 		}),
 	],
